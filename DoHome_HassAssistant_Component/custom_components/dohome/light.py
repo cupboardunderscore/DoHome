@@ -11,12 +11,10 @@ from homeassistant.helpers.event import track_time_interval
 import homeassistant.util.color as color_util
 from homeassistant.components.light import (
     ATTR_BRIGHTNESS,
-    ATTR_COLOR_TEMP,
+    ATTR_COLOR_TEMP_KELVIN,
     ATTR_EFFECT,
     ATTR_RGBWW_COLOR,
     PLATFORM_SCHEMA,
-    SUPPORT_BRIGHTNESS,
-    SUPPORT_COLOR,
     LightEntity,
     ColorMode
 )
@@ -65,10 +63,10 @@ class DoHomeLight(DoHomeDevice, LightEntity):
         """Return true if light is on."""
         return self._state
 
-    @property
-    def supported_features(self):
-        """Return the supported features."""
-        return SUPPORT_BRIGHTNESS | SUPPORT_COLOR
+    #@property
+    #def supported_features(self):
+        #"""Return the supported features."""
+        #return SUPPORT_BRIGHTNESS | SUPPORT_COLOR
 
     @property
     def supported_color_modes(self):
